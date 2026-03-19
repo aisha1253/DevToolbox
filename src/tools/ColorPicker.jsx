@@ -224,7 +224,7 @@ export default function ColorPicker() {
                     // No-op
                   }
                 }}
-                className="w-full max-w-xs rounded-lg border border-slate-200 bg-white px-3 py-2 font-mono text-sm text-slate-900 outline-none focus:ring-2 focus:ring-indigo-500 dark:border-slate-800 dark:bg-slate-950/40 dark:text-slate-100"
+                className="w-full max-w-xs rounded-lg border border-slate-200 bg-white px-3 py-2 font-mono text-sm text-slate-900 outline-none focus:ring-2 focus:ring-brand-500 dark:border-slate-800 dark:bg-slate-950/40 dark:text-slate-100"
                 placeholder="#4F46E5"
               />
 
@@ -246,7 +246,7 @@ export default function ColorPicker() {
               <button
                 type="button"
                 onClick={() => copyText(normalizedHex)}
-                className="rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-500"
+                className="dt-btn rounded-lg px-4 py-2 text-sm font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900"
               >
                 Copy HEX
               </button>
@@ -335,7 +335,7 @@ export default function ColorPicker() {
           <button
             type="button"
             onClick={() => copyText(palette.join(", "))}
-            className="rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800/60"
+            className="dt-btn rounded-lg px-3 py-2 text-xs font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900"
           >
             Copy palette
           </button>

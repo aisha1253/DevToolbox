@@ -81,7 +81,7 @@ export default function Home() {
         {TOOLS.map((tool) => (
           <div
             key={tool.to}
-            className="group relative rounded-2xl border border-slate-200 bg-white p-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-indigo-200 hover:shadow-md focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 dark:border-slate-800 dark:bg-slate-900 dark:hover:border-indigo-500/40 dark:focus-within:ring-offset-slate-900"
+            className="dt-card group relative rounded-2xl border border-slate-200 bg-white p-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-brand-100 hover:shadow-md focus-within:ring-2 focus-within:ring-brand-500 focus-within:ring-offset-2 dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-500/40 dark:focus-within:ring-offset-slate-900"
           >
             {/* Full-card clickable link (keeps semantic navigation) */}
             <Link
@@ -114,7 +114,7 @@ export default function Home() {
 
                 <Link
                   to={tool.to}
-                  className="relative inline-flex items-center justify-center rounded-lg bg-indigo-600 px-3 py-1.5 text-xs font-semibold text-white shadow-sm transition hover:bg-indigo-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900"
+                  className="dt-btn relative inline-flex items-center justify-center rounded-lg px-3 py-1.5 text-xs font-semibold shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900"
                 >
                   Open Tool
                 </Link>

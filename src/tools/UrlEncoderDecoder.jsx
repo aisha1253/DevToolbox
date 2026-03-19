@@ -154,7 +154,7 @@ export default function UrlEncoderDecoder() {
           className={[
             "flex-1 rounded-lg px-3 py-2 text-sm font-semibold transition",
             tab === "encode"
-              ? "bg-indigo-600 text-white"
+              ? "dt-btn text-white"
               : "text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-800/60",
           ].join(" ")}
         >
@@ -174,7 +174,7 @@ export default function UrlEncoderDecoder() {
           className={[
             "flex-1 rounded-lg px-3 py-2 text-sm font-semibold transition",
             tab === "decode"
-              ? "bg-indigo-600 text-white"
+              ? "dt-btn text-white"
               : "text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-800/60",
           ].join(" ")}
         >
@@ -220,7 +220,7 @@ export default function UrlEncoderDecoder() {
                 <button
                   type="button"
                   onClick={() => setShowTooltip((v) => !v)}
-                  className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-2 py-1 text-xs font-semibold text-slate-700 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800/60"
+                  className="dt-btn inline-flex items-center justify-center rounded-full px-2 py-1 text-xs font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900"
                   aria-label="What is the difference?"
                 >
                   ?
@@ -253,7 +253,7 @@ export default function UrlEncoderDecoder() {
               Input
             </div>
             <textarea
-              className="min-h-40 w-full rounded-lg border border-slate-200 bg-white p-3 text-sm text-slate-900 outline-none focus:ring-2 focus:ring-indigo-500 dark:border-slate-800 dark:bg-slate-950/40 dark:text-slate-100"
+              className="min-h-40 w-full rounded-lg border border-slate-200 bg-white p-3 text-sm text-slate-900 outline-none focus:ring-2 focus:ring-brand-500 dark:border-slate-800 dark:bg-slate-950/40 dark:text-slate-100"
               value={input}
               onChange={(e) => {
                 try {
@@ -281,7 +281,7 @@ export default function UrlEncoderDecoder() {
                   setError("");
                   copyText(output, setError);
                 }}
-                className="rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-700 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800/60"
+              className="dt-btn rounded-lg px-3 py-1.5 text-xs font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900"
               >
                 Copy output
               </button>
@@ -302,7 +302,7 @@ export default function UrlEncoderDecoder() {
               type="button"
               onClick={encode}
               disabled={isWorking}
-              className="rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-500 disabled:cursor-not-allowed disabled:opacity-60"
+              className="dt-btn rounded-lg px-4 py-2 text-sm font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900"
             >
               {isWorking ? "Working…" : "Encode"}
             </button>
@@ -311,7 +311,7 @@ export default function UrlEncoderDecoder() {
               type="button"
               onClick={decode}
               disabled={isWorking}
-              className="rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-500 disabled:cursor-not-allowed disabled:opacity-60"
+              className="dt-btn rounded-lg px-4 py-2 text-sm font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900"
             >
               {isWorking ? "Working…" : "Decode"}
             </button>
@@ -319,7 +319,7 @@ export default function UrlEncoderDecoder() {
           <button
             type="button"
             onClick={clearAll}
-            className="rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800/60"
+            className="dt-btn rounded-lg px-4 py-2 text-sm font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900"
           >
             Clear
           </button>
@@ -340,7 +340,7 @@ export default function UrlEncoderDecoder() {
           <button
             type="button"
             onClick={() => copyText(queryUrl, setParamsError)}
-            className="rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800/60"
+            className="dt-btn rounded-lg px-3 py-2 text-xs font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900"
           >
             Copy URL
           </button>
@@ -353,7 +353,7 @@ export default function UrlEncoderDecoder() {
         ) : null}
 
         <textarea
-          className="min-h-24 w-full rounded-lg border border-slate-200 bg-white p-3 text-sm text-slate-900 outline-none focus:ring-2 focus:ring-indigo-500 dark:border-slate-800 dark:bg-slate-950/40 dark:text-slate-100"
+          className="min-h-24 w-full rounded-lg border border-slate-200 bg-white p-3 text-sm text-slate-900 outline-none focus:ring-2 focus:ring-brand-500 dark:border-slate-800 dark:bg-slate-950/40 dark:text-slate-100"
           value={queryUrl}
           onChange={(e) => {
             try {
@@ -403,7 +403,7 @@ export default function UrlEncoderDecoder() {
                         onClick={() =>
                           copyText(`${row.key}=${row.value}`, setParamsError)
                         }
-                        className="rounded-lg border border-slate-200 bg-white px-2 py-1 text-xs font-semibold text-slate-700 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800/60"
+                        className="dt-btn rounded-lg px-2 py-1 text-xs font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900"
                       >
                         Copy
                       </button>

@@ -1,6 +1,80 @@
 @import "tailwindcss";
 
 /* ==========================================================================
+   Dark mode foundation
+   - Use plain CSS so it works even if Tailwind dark variants don't apply
+   ========================================================================== */
+
+.dt-app {
+  background: #f8fafc; /* slate-50 */
+  color: #0f172a; /* slate-900 */
+}
+
+.dark .dt-app {
+  background: #263d42;
+  color: #f8fafc;
+}
+
+/* Default text color in dark mode (inherits naturally) */
+.dark .dt-app {
+  color: #ffffff;
+}
+
+/* Force ALL text white in dark mode (app-wide) */
+.dark .dt-app * {
+  color: #ffffff;
+}
+
+/* Keep form controls readable in dark mode */
+.dark .dt-app input,
+.dark .dt-app textarea,
+.dark .dt-app select {
+  background: rgba(15, 23, 42, 0.35);
+  border-color: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+}
+
+.dark .dt-app ::placeholder {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* Boxes/surfaces: avoid bright white in dark mode, keep text white */
+.dark .dt-app .bg-white,
+.dark .dt-app .bg-slate-50,
+.dark .dt-app .bg-slate-100,
+.dark .dt-app .bg-brand-50,
+.dark .dt-app .bg-brand-100 {
+  background: rgba(15, 23, 42, 0.35) !important;
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.18) !important;
+}
+
+/* Sidebar hover (dark mode): make text dark (keep existing hover background) */
+.dark .dt-sidebar a:hover,
+.dark .dt-sidebar a:hover * {
+  color: #0f172a !important;
+}
+
+/* Card hover (dark mode): background darker + text white */
+.dark .dt-card:hover {
+  background: rgba(15, 23, 42, 0.55) !important;
+  border-color: rgba(255, 255, 255, 0.22) !important;
+}
+.dark .dt-card:hover,
+.dark .dt-card:hover * {
+  color: #ffffff !important;
+}
+
+/* Make header/sidebar panels follow dark background too */
+.dark .dt-app header {
+  background: rgba(38, 61, 66, 0.7);
+}
+
+.dark .dt-app [data-panel="surface"] {
+  background: rgba(38, 61, 66, 1);
+}
+
+/* ==========================================================================
    DevToolbox toasts (no external library)
    - Bottom-right, smooth enter/exit
    ========================================================================== */
@@ -36,4 +110,39 @@
     transform: translateY(0);
     opacity: 1;
   }
+}
+
+/* ==========================================================================
+   DevToolbox buttons (consistent across app)
+   Requirement:
+   - Light theme: background #36555c, text white
+   - Dark theme: background gray, text dark
+   ========================================================================== */
+
+.dt-btn {
+  background: #36555c;
+  color: #ffffff;
+  border: 1px solid rgba(54, 85, 92, 0.55);
+  transition: filter 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+}
+
+/* Dark mode override (Tailwind toggles `dark` on <html>) */
+.dark .dt-btn {
+  background: #cbd5e1; /* slate-300 */
+  color: #ffffff; /* keep text white in dark mode */
+  border: 1px solid rgba(203, 213, 225, 0.7);
+}
+
+.dt-btn:hover {
+  filter: brightness(1.08);
+}
+
+.dt-btn:active {
+  transform: translateY(0.5px);
+}
+
+.dt-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  filter: none;
 }

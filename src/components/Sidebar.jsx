@@ -17,9 +17,9 @@ function getNavLinkClassName({ isActive }) {
   // Active-state highlighting for NavLink
   return [
     "group flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors",
-    "focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900",
+    "focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900",
     isActive
-      ? "bg-indigo-50 text-indigo-700 dark:bg-indigo-500/15 dark:text-indigo-200"
+      ? "bg-brand-100 text-brand-900 dark:bg-brand-500/15 dark:text-brand-100"
       : "text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800/70",
   ].join(" ");
 }
@@ -39,7 +39,7 @@ export default function Sidebar({ onNavigate }) {
   }, [query]);
 
   return (
-    <aside className="flex h-full w-full flex-col">
+    <aside className="dt-sidebar flex h-full w-full flex-col">
       {/* App branding */}
       <Link
         to="/"
@@ -51,10 +51,10 @@ export default function Sidebar({ onNavigate }) {
             // No-op
           }
         }}
-        className="flex items-center gap-3 border-b border-slate-200 px-4 py-4 hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 dark:border-slate-800 dark:hover:bg-slate-800/40 dark:focus-visible:ring-offset-slate-900"
+        className="flex items-center gap-3 border-b border-slate-200 px-4 py-4 hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 dark:border-slate-800 dark:hover:bg-slate-800/40 dark:focus-visible:ring-offset-slate-900"
         aria-label="Go to home"
       >
-        <div className="grid size-9 place-items-center rounded-lg bg-indigo-600 text-white">
+        <div className="grid size-9 place-items-center rounded-lg bg-brand-700 text-white">
           {/* Simple logo mark */}
           <span className="text-lg" aria-hidden="true">
             🧰
@@ -88,7 +88,7 @@ export default function Sidebar({ onNavigate }) {
                 // No-op
               }
             }}
-            className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 outline-none focus:ring-2 focus:ring-indigo-500 dark:border-slate-800 dark:bg-slate-950/40 dark:text-slate-100"
+            className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 outline-none focus:ring-2 focus:ring-brand-500 dark:border-slate-800 dark:bg-slate-950/40 dark:text-slate-100"
             placeholder="Search tools… (Ctrl+K)"
             aria-label="Search tools"
           />

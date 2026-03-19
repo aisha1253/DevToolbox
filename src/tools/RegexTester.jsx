@@ -202,7 +202,7 @@ export default function RegexTester() {
               /
             </span>
             <input
-              className="w-full min-w-[220px] rounded-lg border border-slate-200 bg-white px-3 py-2 font-mono text-sm text-slate-900 outline-none focus:ring-2 focus:ring-indigo-500 dark:border-slate-800 dark:bg-slate-950/40 dark:text-slate-100"
+              className="w-full min-w-[220px] rounded-lg border border-slate-200 bg-white px-3 py-2 font-mono text-sm text-slate-900 outline-none focus:ring-2 focus:ring-brand-500 dark:border-slate-800 dark:bg-slate-950/40 dark:text-slate-100"
               value={pattern}
               onChange={(e) => {
                 // Safe pattern updates
@@ -253,7 +253,7 @@ export default function RegexTester() {
           <button
             type="button"
             onClick={copyRegex}
-            className="rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800/60"
+            className="dt-btn rounded-lg px-3 py-2 text-sm font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900"
           >
             {copied ? "Copied!" : "Copy regex"}
           </button>
@@ -270,7 +270,7 @@ export default function RegexTester() {
                 m: false,
               })
             }
-            className="rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800/60"
+            className="dt-btn rounded-lg px-3 py-1.5 text-xs font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900"
           >
             Email
           </button>
@@ -279,7 +279,7 @@ export default function RegexTester() {
             onClick={() =>
               insertQuick(String.raw`https?:\/\/[^\s]+`, { g: true, i: true, m: false })
             }
-            className="rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800/60"
+            className="dt-btn rounded-lg px-3 py-1.5 text-xs font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900"
           >
             URL
           </button>
@@ -292,21 +292,21 @@ export default function RegexTester() {
                 m: false,
               })
             }
-            className="rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800/60"
+            className="dt-btn rounded-lg px-3 py-1.5 text-xs font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900"
           >
             Phone number
           </button>
           <button
             type="button"
             onClick={() => insertQuick(String.raw`^\d+$`, { g: false, i: false, m: true })}
-            className="rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800/60"
+            className="dt-btn rounded-lg px-3 py-1.5 text-xs font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900"
           >
             Numbers only
           </button>
           <button
             type="button"
             onClick={() => insertQuick(String.raw`^[a-z0-9]+$`, { g: false, i: true, m: true })}
-            className="rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800/60"
+            className="dt-btn rounded-lg px-3 py-1.5 text-xs font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900"
           >
             Alphanumeric
           </button>
@@ -335,7 +335,7 @@ export default function RegexTester() {
 
           {/* Input layer */}
           <textarea
-            className="absolute inset-0 min-h-[12rem] w-full resize-y rounded-lg border border-transparent bg-transparent p-3 font-mono text-sm leading-6 text-transparent caret-slate-900 outline-none focus:ring-2 focus:ring-indigo-500 dark:caret-slate-100"
+            className="absolute inset-0 min-h-[12rem] w-full resize-y rounded-lg border border-transparent bg-transparent p-3 font-mono text-sm leading-6 text-transparent caret-slate-900 outline-none focus:ring-2 focus:ring-brand-500 dark:caret-slate-100"
             value={text}
             onChange={(e) => {
               // Safe text updates

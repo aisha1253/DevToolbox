@@ -324,7 +324,7 @@ export default function JsonFormatter() {
             <select
               value={indent}
               onChange={(e) => setIndent(e.target.value)}
-              className="rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs font-medium text-slate-700 outline-none focus:ring-2 focus:ring-indigo-500 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200"
+              className="rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs font-medium text-slate-700 outline-none focus:ring-2 focus:ring-brand-500 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200"
             >
               <option value="2">2 spaces</option>
               <option value="4">4 spaces</option>
@@ -365,7 +365,7 @@ export default function JsonFormatter() {
 
           {/* Input textarea */}
           <textarea
-            className="min-h-56 w-full rounded-lg border border-slate-200 bg-white p-3 text-sm text-slate-900 outline-none focus:ring-2 focus:ring-indigo-500 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-100"
+            className="min-h-56 w-full rounded-lg border border-slate-200 bg-white p-3 text-sm text-slate-900 outline-none focus:ring-2 focus:ring-brand-500 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-100"
             value={input}
             onChange={(e) => {
               // Keep state updates safe and predictable
@@ -389,7 +389,7 @@ export default function JsonFormatter() {
             <button
               type="button"
               onClick={copyOutput}
-              className="rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-700 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800/60"
+              className="dt-btn rounded-lg px-3 py-1.5 text-xs font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900"
             >
               {copied ? "Copied!" : "Copy Output"}
             </button>
@@ -423,7 +423,7 @@ export default function JsonFormatter() {
           type="button"
           onClick={formatJson}
           disabled={isWorking}
-          className="rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-500 disabled:cursor-not-allowed disabled:opacity-60"
+          className="dt-btn rounded-lg px-4 py-2 text-sm font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900"
         >
           {isWorking ? "Formatting…" : "Format"}
         </button>
@@ -432,7 +432,7 @@ export default function JsonFormatter() {
           type="button"
           onClick={minifyJson}
           disabled={isWorking}
-          className="rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-60 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800/60"
+          className="dt-btn rounded-lg px-4 py-2 text-sm font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900"
         >
           {isWorking ? "Working…" : "Minify"}
         </button>

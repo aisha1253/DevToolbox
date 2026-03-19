@@ -7,7 +7,18 @@ export default {
   content: ["./index.html", "./src/**/*.{js,jsx}"],
 
   theme: {
-    extend: {},
+    extend: {
+      // Brand palette (requested): #17252A #2B7A78 #3AAFA9 #DEF2F1 #FEFFFF
+      colors: {
+        brand: {
+          900: "#17252A",
+          700: "#2B7A78",
+          500: "#3AAFA9",
+          100: "#DEF2F1",
+          50: "#FEFFFF",
+        },
+      },
+    },
   },
   plugins: [],
 };

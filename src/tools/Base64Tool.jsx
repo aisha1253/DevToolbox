@@ -253,7 +253,7 @@ export default function Base64Tool() {
           className={[
             "flex-1 rounded-lg px-3 py-2 text-sm font-semibold transition",
             mode === "text"
-              ? "bg-indigo-600 text-white"
+              ? "bg-brand-500 text-white"
               : "text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-800/60",
           ].join(" ")}
         >
@@ -265,7 +265,7 @@ export default function Base64Tool() {
           className={[
             "flex-1 rounded-lg px-3 py-2 text-sm font-semibold transition",
             mode === "image"
-              ? "bg-indigo-600 text-white"
+              ? "bg-brand-500 text-white"
               : "text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-800/60",
           ].join(" ")}
         >
@@ -296,7 +296,7 @@ export default function Base64Tool() {
                 </div>
               </div>
               <textarea
-                className="min-h-44 w-full rounded-lg border border-slate-200 bg-white p-3 text-sm text-slate-900 outline-none focus:ring-2 focus:ring-indigo-500 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-100"
+                className="min-h-44 w-full rounded-lg border border-slate-200 bg-white p-3 text-sm text-slate-900 outline-none focus:ring-2 focus:ring-brand-500 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-100"
                 value={textInput}
                 onChange={(e) => {
                   // Keep state updates safe and predictable
@@ -335,7 +335,7 @@ export default function Base64Tool() {
               type="button"
               onClick={encodeText}
               disabled={isWorking}
-              className="rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-500 disabled:cursor-not-allowed disabled:opacity-60"
+              className="dt-btn rounded-lg px-4 py-2 text-sm font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900"
             >
               {isWorking ? "Working…" : "Encode"}
             </button>
@@ -344,10 +344,8 @@ export default function Base64Tool() {
               onClick={decodeText}
               disabled={isWorking}
               className={[
-                "rounded-lg border px-4 py-2 text-sm font-medium disabled:cursor-not-allowed disabled:opacity-60",
-                autoLooksBase64
-                  ? "border-indigo-300 bg-indigo-50 text-indigo-700 dark:border-indigo-700 dark:bg-indigo-500/10 dark:text-indigo-200"
-                  : "border-slate-200 bg-white text-slate-700 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800/60",
+                "dt-btn rounded-lg px-4 py-2 text-sm font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900 disabled:cursor-not-allowed disabled:opacity-60",
+                autoLooksBase64 ? "ring-2 ring-brand-500/40" : "",
               ].join(" ")}
             >
               {isWorking ? "Working…" : "Decode"}
@@ -355,14 +353,14 @@ export default function Base64Tool() {
             <button
               type="button"
               onClick={copyTextOutput}
-              className="rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800/60"
+              className="dt-btn rounded-lg px-4 py-2 text-sm font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900"
             >
               Copy output
             </button>
             <button
               type="button"
               onClick={clearText}
-              className="rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800/60"
+              className="dt-btn rounded-lg px-4 py-2 text-sm font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900"
             >
               Clear
             </button>
@@ -382,7 +380,7 @@ export default function Base64Tool() {
 
           {/* Upload section */}
           <div className="flex flex-wrap items-center gap-2">
-            <label className="inline-flex cursor-pointer items-center justify-center rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-500">
+            <label className="dt-btn inline-flex cursor-pointer items-center justify-center rounded-lg px-4 py-2 text-sm font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900">
               Upload image
               <input
                 type="file"
@@ -401,7 +399,7 @@ export default function Base64Tool() {
             <button
               type="button"
               onClick={clearImage}
-              className="rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800/60"
+              className="dt-btn rounded-lg px-4 py-2 text-sm font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900"
             >
               Clear
             </button>
@@ -450,7 +448,7 @@ export default function Base64Tool() {
                   <button
                     type="button"
                     onClick={copyImageBase64}
-                    className="rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-700 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800/60"
+                    className="dt-btn rounded-lg px-3 py-1.5 text-xs font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900"
                   >
                     Copy Base64
                   </button>

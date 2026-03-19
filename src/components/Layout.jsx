@@ -107,9 +107,9 @@ export default function Layout({ children }) {
 
   return (
     <ToastProvider>
-      <div className="min-h-screen bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+      <div className="dt-app min-h-screen">
       {/* Desktop sidebar (fixed, 250px wide) */}
-      <div className="fixed inset-y-0 left-0 hidden w-[250px] border-r border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900 md:block">
+      <div data-panel="surface" className="fixed inset-y-0 left-0 hidden w-[250px] border-r border-slate-200 bg-white dark:border-slate-800 md:block">
         <Sidebar />
       </div>
 
@@ -125,7 +125,7 @@ export default function Layout({ children }) {
           />
 
           {/* Drawer */}
-          <div className="absolute inset-y-0 left-0 w-[250px] bg-white shadow-xl dark:bg-slate-900">
+          <div data-panel="surface" className="absolute inset-y-0 left-0 w-[250px] bg-white shadow-xl">
             <Sidebar onNavigate={closeSidebar} />
           </div>
         </div>
@@ -134,13 +134,13 @@ export default function Layout({ children }) {
       {/* Main content area (offset by sidebar width on desktop) */}
       <div className="md:pl-[250px]">
         {/* Header with hamburger + dark mode toggle */}
-        <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/80 backdrop-blur dark:border-slate-800 dark:bg-slate-900/70">
+        <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/80 backdrop-blur dark:border-slate-800">
           <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3">
             {/* Left: hamburger (mobile) + page title */}
             <div className="flex min-w-0 items-center gap-2">
               <button
                 type="button"
-                className="inline-flex items-center justify-center rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800/60 dark:focus-visible:ring-offset-slate-900 md:hidden"
+                className="inline-flex items-center justify-center rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800/60 dark:focus-visible:ring-offset-slate-900 md:hidden"
                 onClick={() => setIsSidebarOpen(true)}
                 aria-label="Open sidebar"
               >
@@ -149,7 +149,7 @@ export default function Layout({ children }) {
 
               <Link
                 to="/"
-                className="min-w-0 rounded-lg px-2 py-1 transition hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 dark:hover:bg-slate-800/40 dark:focus-visible:ring-offset-slate-900"
+                className="min-w-0 rounded-lg px-2 py-1 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900"
                 aria-label="Go to home"
                 onClick={() => setIsSidebarOpen(false)}
               >
@@ -166,7 +166,7 @@ export default function Layout({ children }) {
             <div className="flex items-center gap-2">
               <button
                 type="button"
-                className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800/60 dark:focus-visible:ring-offset-slate-900"
+                className="dt-btn inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900"
                 onClick={toggleTheme}
               >
                 <span className="text-base" aria-hidden="true">
