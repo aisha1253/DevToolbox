@@ -2,9 +2,7 @@
 
 DevToolbox is a modern React + Vite app that bundles a set of fast, offline-friendly **developer utilities** in one place. It’s responsive, supports dark mode, and includes keyboard shortcuts for speed.
 
-## Live demo
 
-- **Demo**: `https://your-live-demo-link-here`
 
 ## Tools
 
