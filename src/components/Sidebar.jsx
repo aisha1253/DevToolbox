@@ -1,26 +1,29 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 
-// Sidebar navigation items (emoji icons as requested)
 const TOOL_LINKS = [
-  { icon: "🔧", label: "JSON Formatter", to: "/tools/json-formatter" },
-  { icon: "🔐", label: "Base64 Encoder", to: "/tools/base64" },
-  { icon: "🔍", label: "Regex Tester", to: "/tools/regex" },
-  { icon: "🔗", label: "URL Encoder", to: "/tools/url-encoder" },
-  { icon: "🎨", label: "Color Picker", to: "/tools/color-picker" },
-  { icon: "🪙", label: "JWT Decoder", to: "/tools/jwt-decoder" },
-  { icon: "📝", label: "Markdown Preview", to: "/tools/markdown" },
-  { icon: "📊", label: "Word Counter", to: "/tools/word-counter" },
+  { label: "JSON Formatter", to: "/tools/json-formatter" },
+  { label: "Base64 Encoder", to: "/tools/base64" },
+  { label: "Regex Tester", to: "/tools/regex" },
+  { label: "URL Encoder", to: "/tools/url-encoder" },
+  { label: "Color Picker", to: "/tools/color-picker" },
+  { label: "JWT Decoder", to: "/tools/jwt-decoder" },
+  { label: "Markdown Preview", to: "/tools/markdown" },
+  { label: "Word Counter", to: "/tools/word-counter" },
+  { label: "CSS Box Shadow", to: "/tools/css-shadow" },
+  { label: "CSS Gradient", to: "/tools/css-gradient" },
+  { label: "Password Generator", to: "/tools/password-generator" },
 ];
 
 function getNavLinkClassName({ isActive }) {
-  // Active-state highlighting for NavLink
   return [
-    "group flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors",
-    "focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900",
+    "block rounded-lg px-3 py-2 text-sm font-medium",
+    "focus:outline-none focus-visible:ring-2 focus-visible:ring-[#3aafa9] focus-visible:ring-offset-2 dark:focus-visible:ring-offset-[#263d42]",
+    "hover:bg-transparent dark:hover:bg-transparent",
+    "hover:text-slate-700 dark:hover:text-white",
     isActive
-      ? "bg-brand-100 text-brand-900 dark:bg-brand-500/15 dark:text-brand-100"
-      : "text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800/70",
+      ? "bg-brand-100 text-brand-900 dark:bg-[rgba(58,175,169,0.2)] dark:text-white"
+      : "text-slate-700 dark:text-white",
   ].join(" ");
 }
 
@@ -42,7 +45,7 @@ export default function Sidebar({ onNavigate }) {
     <aside className="dt-sidebar flex h-full w-full flex-col">
       {/* App branding */}
       <Link
-        to="/"
+        to="/tools"
         onClick={() => {
           // Close mobile drawer when navigating home
           try {
@@ -51,20 +54,14 @@ export default function Sidebar({ onNavigate }) {
             // No-op
           }
         }}
-        className="flex items-center gap-3 border-b border-slate-200 px-4 py-4 hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 dark:border-slate-800 dark:hover:bg-slate-800/40 dark:focus-visible:ring-offset-slate-900"
-        aria-label="Go to home"
+        className="block border-b border-slate-200 px-4 py-4 hover:bg-transparent focus:outline-none focus-visible:ring-2 focus-visible:ring-[#3aafa9] focus-visible:ring-offset-2 dark:border-slate-600/60 dark:hover:bg-transparent dark:focus-visible:ring-offset-[#263d42]"
+        aria-label="Go to tools home"
       >
-        <div className="grid size-9 place-items-center rounded-lg bg-brand-700 text-white">
-          {/* Simple logo mark */}
-          <span className="text-lg" aria-hidden="true">
-            🧰
-          </span>
-        </div>
         <div className="min-w-0">
-          <div className="truncate text-base font-semibold text-slate-900 dark:text-slate-100">
+          <div className="truncate text-base font-semibold text-slate-900 dark:text-white">
             DevToolbox
           </div>
-          <div className="truncate text-xs text-slate-500 dark:text-slate-400">
+          <div className="truncate text-xs text-slate-500 dark:text-white">
             Handy developer utilities
           </div>
         </div>
@@ -72,7 +69,7 @@ export default function Sidebar({ onNavigate }) {
 
       {/* Tool links */}
       <nav className="flex-1 overflow-y-auto p-3">
-        <div className="px-2 pb-2 text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+        <div className="px-2 pb-2 text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-white">
           Tools
         </div>
 
@@ -88,7 +85,7 @@ export default function Sidebar({ onNavigate }) {
                 // No-op
               }
             }}
-            className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 outline-none focus:ring-2 focus:ring-brand-500 dark:border-slate-800 dark:bg-slate-950/40 dark:text-slate-100"
+            className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 outline-none focus:ring-2 focus:ring-[#3aafa9] dark:border-slate-500/50 dark:bg-[rgba(15,23,42,0.45)] dark:text-white dark:placeholder:text-slate-400"
             placeholder="Search tools… (Ctrl+K)"
             aria-label="Search tools"
           />
@@ -109,9 +106,6 @@ export default function Sidebar({ onNavigate }) {
                   }
                 }}
               >
-                <span className="text-base" aria-hidden="true">
-                  {item.icon}
-                </span>
                 <span className="truncate">{item.label}</span>
               </NavLink>
             </li>
@@ -120,8 +114,8 @@ export default function Sidebar({ onNavigate }) {
       </nav>
 
       {/* Footer area */}
-      <div className="border-t border-slate-200 p-3 text-xs text-slate-500 dark:border-slate-800 dark:text-slate-400">
-        <div className="rounded-lg bg-slate-50 px-3 py-2 dark:bg-slate-900/40">
+      <div className="border-t border-slate-200 p-3 text-xs text-slate-500 dark:border-slate-600/50 dark:text-white">
+        <div className="rounded-lg bg-slate-50 px-3 py-2 dark:bg-[rgba(15,23,42,0.5)] dark:text-white">
           Tip: Use the sidebar to switch tools quickly.
         </div>
       </div>

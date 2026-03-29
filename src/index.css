@@ -10,19 +10,19 @@
   color: #0f172a; /* slate-900 */
 }
 
+/* App shell: Rajdhani + tool cards; background comes from .dt-app / .dark .dt-app */
+.dt-app.dt-app-landing {
+  font-family: "Rajdhani", system-ui, sans-serif;
+}
+
 .dark .dt-app {
   background: #263d42;
-  color: #f8fafc;
+  color: #f1f5f9;
 }
 
-/* Default text color in dark mode (inherits naturally) */
-.dark .dt-app {
-  color: #ffffff;
-}
-
-/* Force ALL text white in dark mode (app-wide) */
-.dark .dt-app * {
-  color: #ffffff;
+/* One voice for app chrome + main: light copy on dark teal shell */
+.dark .dt-app.dt-app-landing {
+  color: #e8eef2;
 }
 
 /* Keep form controls readable in dark mode */
@@ -34,8 +34,24 @@
   color: #ffffff;
 }
 
+/* Range sliders: global input styles look wrong on sliders */
+.dark .dt-app input[type="range"] {
+  background: transparent !important;
+  border: none !important;
+  color: inherit;
+}
+
+.dark .dt-app input[type="color"] {
+  background: transparent !important;
+  border-color: rgba(148, 163, 184, 0.45) !important;
+}
+
 .dark .dt-app ::placeholder {
   color: rgba(255, 255, 255, 0.65);
+}
+
+.dark .dt-sidebar input::placeholder {
+  color: rgba(148, 163, 184, 0.95) !important;
 }
 
 /* Boxes/surfaces: avoid bright white in dark mode, keep text white */
@@ -49,10 +65,12 @@
   border-color: rgba(255, 255, 255, 0.18) !important;
 }
 
-/* Sidebar hover (dark mode): make text dark (keep existing hover background) */
+/* Sidebar (dark): all link text stays white; no hover color shift */
+.dark .dt-sidebar a,
 .dark .dt-sidebar a:hover,
+.dark .dt-sidebar a *,
 .dark .dt-sidebar a:hover * {
-  color: #0f172a !important;
+  color: #ffffff !important;
 }
 
 /* Card hover (dark mode): background darker + text white */
@@ -65,7 +83,6 @@
   color: #ffffff !important;
 }
 
-/* Make header/sidebar panels follow dark background too */
 .dark .dt-app header {
   background: rgba(38, 61, 66, 0.7);
 }
@@ -145,4 +162,91 @@
   opacity: 0.6;
   cursor: not-allowed;
   filter: none;
+}
+
+/* ==========================================================================
+   Tools home (/tools): same fonts + card language as intro landing
+   ========================================================================== */
+
+.br-tools-page {
+  font-family: "Rajdhani", system-ui, sans-serif;
+  --br-muted: #94a3a8;
+  --br-cyan: #3aafa9;
+  --br-cyan-bright: #def2f1;
+  --br-teal-deep: #2b7a78;
+}
+
+.br-tools-page .br-section-title {
+  margin-bottom: 0.5rem;
+}
+
+/* Page title: dark on light shell, light on dark shell (overrides blade .br-section-title #fff) */
+.br-tools-page h1.br-section-title {
+  color: #0f172a;
+}
+
+.dark .dt-app .br-tools-page h1.br-section-title {
+  color: #feffff !important;
+}
+
+.dt-app-landing-main {
+  font-family: "Rajdhani", system-ui, sans-serif;
+}
+
+.br-tools-page .br-tools-lead {
+  font-size: 1.05rem;
+  font-weight: 400;
+  line-height: 1.65;
+  color: #64748b;
+}
+
+.br-tools-page .br-tools-intro {
+  color: #64748b;
+}
+
+.br-tools-page .br-tools-intro-link {
+  color: #2b7a78;
+  text-decoration: none;
+}
+
+.br-tools-page .br-tools-intro-link:hover {
+  text-decoration: underline;
+}
+
+.br-tools-page .br-tool-card-title {
+  font-size: clamp(1.15rem, 2.4vw, 1.5rem) !important;
+  line-height: 1.25;
+}
+
+.br-tools-page .br-tools-hint {
+  color: #94a3a8;
+}
+
+.dark .dt-app .br-tools-page .br-tools-lead,
+.dark .dt-app .br-tools-page .br-tools-intro {
+  color: #94a3a8 !important;
+}
+
+.dark .dt-app .br-tools-page .br-tools-intro-link {
+  color: #3aafa9 !important;
+}
+
+.dark .dt-app .br-tools-page .br-tools-hint {
+  color: #94a3a8 !important;
+}
+
+.dark .dt-app .br-tools-page .br-character-desc {
+  color: #94a3a8 !important;
+}
+
+.dark .dt-app .br-tools-page .br-character-role {
+  color: #3aafa9 !important;
+}
+
+.dark .dt-app .br-tools-page .br-character-name {
+  color: #ffffff !important;
+}
+
+.dark .dt-app .br-tools-page .br-character-movie {
+  color: #def2f1 !important;
 }

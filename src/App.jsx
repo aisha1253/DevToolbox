@@ -1,9 +1,10 @@
 import React from "react";
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Link, Navigate, Route, Routes } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import Layout from "./components/Layout";
+import BladeRunnerLanding from "./pages/BladeRunnerLanding";
 
-// Lazy-load pages/tools to keep initial bundle small
+// Lazy-load app pages/tools to keep initial bundle small
 const Home = React.lazy(() => import("./pages/Home"));
 const JsonFormatter = React.lazy(() => import("./tools/JsonFormatter"));
 const Base64Tool = React.lazy(() => import("./tools/Base64Tool"));
@@ -13,7 +14,9 @@ const ColorPicker = React.lazy(() => import("./tools/ColorPicker"));
 const JwtDecoder = React.lazy(() => import("./tools/JwtDecoder"));
 const MarkdownPreviewer = React.lazy(() => import("./tools/MarkdownPreviewer"));
 const WordCounter = React.lazy(() => import("./tools/WordCounter"));
-
+const CssShadowGenerator = React.lazy(() => import("./tools/CssShadowGenerator"));
+const CssGradientGenerator = React.lazy(() => import("./tools/CssGradientGenerator"));
+const PasswordGenerator = React.lazy(() => import("./tools/PasswordGenerator"));
 function LoadingScreen() {
   // Small, friendly loading state for lazy-loaded routes
   return (
@@ -42,10 +45,10 @@ function NotFound() {
       </div>
       <div className="mt-4">
         <Link
-          to="/"
+          to="/tools"
           className="dt-btn inline-flex items-center justify-center rounded-lg px-4 py-2 text-sm font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900"
         >
-          Go Home
+          Back to tools
         </Link>
       </div>
     </div>
@@ -64,8 +67,12 @@ export default function App() {
         {/* Suspense boundary for all lazy-loaded routes */}
         <React.Suspense fallback={withLayout(<LoadingScreen />)}>
           <Routes>
-            {/* Home */}
-            <Route path="/" element={withLayout(<Home />)} />
+            {/* Cyber-noir intro (full viewport, no app chrome) */}
+            <Route path="/" element={<BladeRunnerLanding />} />
+            <Route path="/blade-runner" element={<Navigate to="/" replace />} />
+
+            {/* App home: tool grid */}
+            <Route path="/tools" element={withLayout(<Home />)} />
 
             {/* Tools */}
             <Route
@@ -93,6 +100,18 @@ export default function App() {
             <Route
               path="/tools/word-counter"
               element={withLayout(<WordCounter />)}
+            />
+            <Route
+              path="/tools/css-shadow"
+              element={withLayout(<CssShadowGenerator />)}
+            />
+            <Route
+              path="/tools/css-gradient"
+              element={withLayout(<CssGradientGenerator />)}
+            />
+            <Route
+              path="/tools/password-generator"
+              element={withLayout(<PasswordGenerator />)}
             />
 
             {/* 404 */}

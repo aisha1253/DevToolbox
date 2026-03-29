@@ -2,6 +2,7 @@ import React from "react";
 import Sidebar from "./Sidebar";
 import ToastProvider from "./ToastProvider";
 import { Link } from "react-router-dom";
+import "../styles/bladeRunnerLanding.css";
 
 const THEME_STORAGE_KEY = "devtoolbox-theme"; // "dark" | "light"
 
@@ -107,9 +108,12 @@ export default function Layout({ children }) {
 
   return (
     <ToastProvider>
-      <div className="dt-app min-h-screen">
+      <div className="dt-app dt-app-landing min-h-screen">
       {/* Desktop sidebar (fixed, 250px wide) */}
-      <div data-panel="surface" className="fixed inset-y-0 left-0 hidden w-[250px] border-r border-slate-200 bg-white dark:border-slate-800 md:block">
+      <div
+        data-panel="surface"
+        className="fixed inset-y-0 left-0 hidden w-[250px] border-r border-slate-200 bg-white dark:border-slate-800 md:block"
+      >
         <Sidebar />
       </div>
 
@@ -125,7 +129,10 @@ export default function Layout({ children }) {
           />
 
           {/* Drawer */}
-          <div data-panel="surface" className="absolute inset-y-0 left-0 w-[250px] bg-white shadow-xl">
+          <div
+            data-panel="surface"
+            className="absolute inset-y-0 left-0 w-[250px] bg-white shadow-xl"
+          >
             <Sidebar onNavigate={closeSidebar} />
           </div>
         </div>
@@ -148,15 +155,15 @@ export default function Layout({ children }) {
               </button>
 
               <Link
-                to="/"
+                to="/tools"
                 className="min-w-0 rounded-lg px-2 py-1 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900"
-                aria-label="Go to home"
+                aria-label="Go to tools home"
                 onClick={() => setIsSidebarOpen(false)}
               >
                 <div className="truncate text-sm font-semibold text-slate-900 dark:text-slate-100">
                   DevToolbox
                 </div>
-                <div className="truncate text-xs text-slate-500 dark:text-slate-400">
+                <div className="truncate text-xs text-slate-500 dark:text-slate-300">
                   Build faster with small utilities
                 </div>
               </Link>
@@ -181,7 +188,7 @@ export default function Layout({ children }) {
         </header>
 
         {/* Content container */}
-        <main className="mx-auto w-full max-w-6xl px-4 py-6">
+        <main className="dt-app-landing-main mx-auto w-full max-w-6xl px-4 py-6">
           {children}
         </main>
       </div>
