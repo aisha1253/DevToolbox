@@ -17,6 +17,7 @@ const WordCounter = React.lazy(() => import("./tools/WordCounter"));
 const CssShadowGenerator = React.lazy(() => import("./tools/CssShadowGenerator"));
 const CssGradientGenerator = React.lazy(() => import("./tools/CssGradientGenerator"));
 const PasswordGenerator = React.lazy(() => import("./tools/PasswordGenerator"));
+const FlexboxGenerator = React.lazy(() => import("./tools/FlexboxGenerator"));
 function LoadingScreen() {
   // Small, friendly loading state for lazy-loaded routes
   return (
@@ -112,6 +113,10 @@ export default function App() {
             <Route
               path="/tools/password-generator"
               element={withLayout(<PasswordGenerator />)}
+            />
+            <Route
+              path="/tools/flexbox-generator"
+              element={withLayout(<FlexboxGenerator />)}
             />
 
             {/* 404 */}

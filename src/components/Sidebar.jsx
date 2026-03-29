@@ -13,6 +13,7 @@ const TOOL_LINKS = [
   { label: "CSS Box Shadow", to: "/tools/css-shadow" },
   { label: "CSS Gradient", to: "/tools/css-gradient" },
   { label: "Password Generator", to: "/tools/password-generator" },
+  { label: "Flex & Grid Generator", to: "/tools/flexbox-generator" },
 ];
 
 function getNavLinkClassName({ isActive }) {

@@ -67,14 +67,15 @@ function getStrength(password, opts) {
   return "weak";
 }
 
-function strengthStyles(level) {
+/** Same footprint as dt-btn; background reflects strength level */
+function strengthBadgeClass(level) {
   switch (level) {
     case "strong":
-      return "border-emerald-500/40 bg-emerald-500/15 text-emerald-800 dark:border-emerald-400/35 dark:bg-emerald-500/15 dark:text-emerald-200";
+      return "border border-emerald-700/40 bg-emerald-600 text-white shadow-sm dark:border-emerald-400/30 dark:bg-emerald-600 dark:text-white";
     case "medium":
-      return "border-amber-500/40 bg-amber-500/15 text-amber-900 dark:border-amber-400/35 dark:bg-amber-500/15 dark:text-amber-100";
+      return "border border-amber-600/40 bg-amber-500 text-white shadow-sm dark:border-amber-400/30 dark:bg-amber-500 dark:text-white";
     default:
-      return "border-rose-500/40 bg-rose-500/15 text-rose-900 dark:border-rose-400/35 dark:bg-rose-500/15 dark:text-rose-100";
+      return "border border-rose-700/40 bg-rose-600 text-white shadow-sm dark:border-rose-400/30 dark:bg-rose-600 dark:text-white";
   }
 }
 
@@ -246,12 +247,12 @@ export default function PasswordGenerator() {
           {password || "—"}
         </div>
 
-        <div
-          className={`inline-flex items-center rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-wide ${strengthStyles(strength)}`}
+        <span
+          className={`inline-flex cursor-default items-center rounded-lg border px-3 py-1.5 text-xs font-medium transition-colors duration-200 ${strengthBadgeClass(strength)}`}
           role="status"
         >
           Strength: {strengthLabel}
-        </div>
+        </span>
       </div>
     </div>
   );

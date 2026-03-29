@@ -92,6 +92,14 @@ const TOOLS = [
     description: "Random passwords with length, sets, strength, copy & regenerate",
     to: "/tools/password-generator",
   },
+  {
+    badge: "CSS",
+    role: "Flex · Grid",
+    icon: "📐",
+    name: "Flex & Grid Generator",
+    description: "Flex or CSS Grid, live numbered boxes, copy container CSS",
+    to: "/tools/flexbox-generator",
+  },
 ];
 
 function matchesToolQuery(tool, q) {
